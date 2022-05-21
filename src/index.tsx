@@ -5,6 +5,7 @@ import "antd/dist/antd.css";
 import rootReducer from "./store";
 import thunk from "redux-thunk";
 import { Provider } from "react-redux";
+import {BrowserRouter as Router} from "react-router-dom";
 
 const store = createStore(rootReducer, applyMiddleware(thunk));
 const root = ReactDOM.createRoot(
@@ -12,6 +13,8 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <Provider store={store}>
-    <App />
+      <Router>
+          <App />
+      </Router>
   </Provider>
 );
